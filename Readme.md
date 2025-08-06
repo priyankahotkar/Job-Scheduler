@@ -1,4 +1,4 @@
-# CareEco Distributed Job Scheduler
+# Distributed Job Scheduler
 
 A professional, visually appealing distributed job scheduler dashboard built with React.  
 This project allows you to manage, schedule, and monitor user-defined jobs across a simulated cluster of worker machines.
@@ -29,7 +29,7 @@ This project allows you to manage, schedule, and monitor user-defined jobs acros
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v16+ recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/)
 
 ### Installation
 
@@ -37,7 +37,6 @@ This project allows you to manage, schedule, and monitor user-defined jobs acros
 
    ```bash
    git clone https://github.com/priyankahotkar/Job-Scheduler.git
-   cd careeco-job-scheduler
    ```
 
 2. **Install dependencies:**
