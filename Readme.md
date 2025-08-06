@@ -1,4 +1,4 @@
-# Distributed Job Scheduler
+# Distributed Job Scheduler - [View live](https://job-scheduler-priyankas-projects-3407f629.vercel.app/)
 
 A professional, visually appealing distributed job scheduler dashboard built with React.  
 This project allows you to manage, schedule, and monitor user-defined jobs across a simulated cluster of worker machines.
