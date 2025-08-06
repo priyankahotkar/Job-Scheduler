@@ -62,9 +62,9 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-      <div className="relative top-20 mx-auto p-5 border w-full max-w-2xl shadow-lg rounded-md bg-white">
+      <div className="relative top-20 mx-auto p-8 border w-full max-w-2xl shadow-lg rounded-xl bg-white">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-2xl font-bold text-gray-900">
+          <h3 className="text-2xl font-semibold text-gray-900">
             {job ? 'Edit Job' : 'Create New Job'}
           </h3>
           <button
@@ -86,7 +86,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter job name"
               />
             </div>
@@ -99,7 +99,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Describe what this job does"
               />
             </div>
@@ -111,7 +111,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
               <select
                 value={formData.schedule}
                 onChange={(e) => setFormData({ ...formData, schedule: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 {scheduleOptions.map(option => (
                   <option key={option} value={option}>{option}</option>
@@ -126,7 +126,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
               <select
                 value={formData.priority}
                 onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
@@ -143,7 +143,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                 required
                 value={formData.command}
                 onChange={(e) => setFormData({ ...formData, command: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="e.g., processData(), /api/sync, backup.sh"
               />
             </div>
@@ -161,7 +161,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                   ...formData,
                   retryPolicy: { ...formData.retryPolicy, maxRetries: parseInt(e.target.value) }
                 })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -178,7 +178,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                   ...formData,
                   retryPolicy: { ...formData.retryPolicy, backoffMs: parseInt(e.target.value) }
                 })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </div>
@@ -193,7 +193,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                 {formData.dependencies.map(depId => {
                   const dep = availableDependencies.find(d => d.id === depId);
                   return (
-                    <div key={depId} className="flex items-center justify-between bg-gray-50 px-3 py-2 rounded-md">
+                    <div key={depId} className="flex items-center justify-between bg-gray-50 px-4 py-2 rounded-md">
                       <span className="text-sm">{dep?.name || depId}</span>
                       <button
                         type="button"
@@ -213,7 +213,7 @@ const JobForm = ({ job, onSubmit, onClose, existingJobs = [] }) => {
                 <select
                   value={newDependency}
                   onChange={(e) => setNewDependency(e.target.value)}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">Select a dependency</option>
                   {availableDependencies

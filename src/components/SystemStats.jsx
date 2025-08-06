@@ -8,10 +8,11 @@ const SystemStats = ({ stats, workers }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      {/* Total Jobs */}
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5 hover:shadow-lg transition-shadow duration-200">
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
               <Activity className="w-6 h-6 text-blue-600" />
             </div>
           </div>
@@ -20,24 +21,25 @@ const SystemStats = ({ stats, workers }) => {
             <p className="text-2xl font-bold text-gray-900">{stats.totalJobs}</p>
           </div>
         </div>
-        <div className="mt-4">
-          <div className="flex items-center space-x-4 text-sm">
+        <div className="mt-3">
+          <div className="flex items-center space-x-3 text-sm">
             <div className="flex items-center space-x-1">
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-gray-600">{stats.runningJobs} running</span>
+              <span className="text-gray-500">{stats.runningJobs} running</span>
             </div>
             <div className="flex items-center space-x-1">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-gray-600">{stats.completedJobs} completed</span>
+              <span className="text-gray-500">{stats.completedJobs} completed</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      {/* Success Rate */}
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5 hover:shadow-lg transition-shadow duration-200">
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center">
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
           </div>
@@ -50,8 +52,8 @@ const SystemStats = ({ stats, workers }) => {
             </p>
           </div>
         </div>
-        <div className="mt-4">
-          <div className="w-full bg-gray-200 rounded-full h-2">
+        <div className="mt-3">
+          <div className="w-full bg-gray-100 rounded-full h-2">
             <div 
               className="bg-green-500 h-2 rounded-full transition-all duration-300" 
               style={{ 
@@ -64,10 +66,11 @@ const SystemStats = ({ stats, workers }) => {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      {/* Workers */}
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5 hover:shadow-lg transition-shadow duration-200">
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center">
               <Users className="w-6 h-6 text-purple-600" />
             </div>
           </div>
@@ -76,22 +79,23 @@ const SystemStats = ({ stats, workers }) => {
             <p className="text-2xl font-bold text-gray-900">{stats.totalWorkers}</p>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-3">
           <div className="flex items-center space-x-2">
             {workers.slice(0, 4).map(worker => (
               <div key={worker.id} className="flex items-center space-x-1">
                 <div className={`w-2 h-2 ${getWorkerStatusColor(worker.status)} rounded-full`}></div>
               </div>
             ))}
-            <span className="text-sm text-gray-600">{stats.activeWorkers} active</span>
+            <span className="text-sm text-gray-500">{stats.activeWorkers} active</span>
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      {/* Avg Load */}
+      <div className="bg-white rounded-xl shadow-md border border-gray-100 p-5 hover:shadow-lg transition-shadow duration-200">
         <div className="flex items-center">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center">
               <Zap className="w-6 h-6 text-orange-600" />
             </div>
           </div>
@@ -102,8 +106,8 @@ const SystemStats = ({ stats, workers }) => {
             </p>
           </div>
         </div>
-        <div className="mt-4">
-          <div className="w-full bg-gray-200 rounded-full h-2">
+        <div className="mt-3">
+          <div className="w-full bg-gray-100 rounded-full h-2">
             <div 
               className={`h-2 rounded-full transition-all duration-300 ${
                 stats.avgWorkerLoad > 0.8 ? 'bg-red-500' :

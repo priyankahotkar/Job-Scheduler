@@ -10,7 +10,7 @@ const Footer = () => (
       </div>
       <div className="flex items-center space-x-4 text-sm">
         <a
-          href="https://github.com/"
+          href="https://github.com/priyankahotkar"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline"
